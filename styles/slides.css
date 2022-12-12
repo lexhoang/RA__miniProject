@@ -8,7 +8,7 @@
 }
 
 /* Slideshow container */
-.slideshow-container {
+#slideshow-container {
     width: 100%;
     position: relative;
 }

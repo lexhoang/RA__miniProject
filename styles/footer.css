@@ -1,0 +1,38 @@
+#footer {
+    position: relative;
+    bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #002046;
+    margin-top: 80px;
+    padding: 10px;
+    color: #fff;
+}
+
+.footer-first>div,
+.footer-second>div,
+.footer-third>div,
+.footer-4th>div {
+    margin: 20px 0;
+    padding: 0 20px;
+}
+
+.footer-icons a i {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    padding: 4px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    text-align: center;
+}
+
+.footer-4th input,
+.footer-4th textarea,
+.footer-4th button {
+    background-color: #002046;
+    border: 2px solid #fff;
+    color: #fff
+}

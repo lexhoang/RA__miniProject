@@ -4,12 +4,6 @@
     box-sizing: border-box;
 }
 
-.footer {
-    margin-top: 80px;
-    background-color: #ccc;
-    width: 100%;
-    height: 300px
-}
 
 button:hover {
     cursor: pointer;
