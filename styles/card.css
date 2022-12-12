@@ -6,6 +6,10 @@ body {
     background-attachment: fixed;
 }
 
+.container {
+    min-height: 750px;
+}
+
 .content-card {
     margin: 50px auto;
     background-color: rgba(74, 72, 72, 0.836);

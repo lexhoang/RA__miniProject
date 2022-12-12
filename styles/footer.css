@@ -8,6 +8,9 @@
     margin-top: 80px;
     padding: 10px;
     color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 .footer-first>div,
