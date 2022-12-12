@@ -90,8 +90,8 @@ function deleteProduct(value) {
 function buyNow() {
     let listUser = localStorage.getItem("user");
     if (listUser == null) {
-        window.location.href = "../pages/loginForm.html"
+        window.location.href = "loginForm.html"
     } else {
-        window.location.href = "../pages/thanhToan.html";
+        window.location.href = "thanhToan.html";
     }
 }

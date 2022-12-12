@@ -9,7 +9,7 @@ function onloadHeader() {
         let renderHeader = `
             <div class="nav-head_left col-">
                 <h2><a href="index.html">
-                        <img src="../images/logo.png" width="80%" alt="">
+                        <img src="images/logo.png" width="80%" alt="">
                 </a></h2>
             </div>
 
@@ -31,7 +31,7 @@ function onloadHeader() {
         let renderHeader = `
             <div class="nav-head_left col-">
                 <h2><a href="index.html">
-                        <img src="../images/logo.png" width="80%" alt="">
+                        <img src="images/logo.png" width="80%" alt="">
                 </a></h2>
             </div>
 
