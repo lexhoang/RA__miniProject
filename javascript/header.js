@@ -72,13 +72,13 @@ function renderLogin() {
         let user = JSON.parse(getUser);
         let renderUser = `
             <ul>
-                <li><i class="fa-solid fa-user" style="font-size:28px"></i>
+                <li><i class="fa-solid fa-user" style="font-size:28px;margin:0 50px""></i>
                     <ul>
                         <li> <a href="#" style="font-size:12px">${user[user.length - 1].email}</a></li>
                     </ul>
                 </li>
             </ul>
-            <i class="fa-solid fa-right-from-bracket" onclick="logOut()" style="font-size:28px; margin-left:50px"></i>
+            <i class="fa-solid fa-right-from-bracket" onclick="logOut()" style="font-size:28px;"></i>
             `
         change.innerHTML += renderUser;
     }

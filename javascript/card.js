@@ -9,9 +9,10 @@ function numberWithCommas(number) {
 function onLoadProducts() {
     let listProductCart = localStorage.getItem("listProductCart");
     let listProduct = JSON.parse(listProductCart);
+    let product = "";
     for (const index in listProduct) {
         console.log(listProduct[index]);
-        let product = `
+        product += `
         <div class="card">
             <img src="${listProduct[index].image}" alt="">
             <div class="card-body">
@@ -21,9 +22,10 @@ function onLoadProducts() {
                     <h4 class="quantity">Số lượng:&ensp; ${listProduct[index].quantity}</h4><br>
                     <h4>Giá ưu đãi:&ensp; ${numberWithCommas(listProduct[index].price)}</h4><br>
 
-                    <button class="btn-plus" style="width:20px" onclick="subProduct(${listProduct[index].id})">-</button>
-                    <input type="text" style="width:50px; text-align:center"value="${listProduct[index].quantity}"/>
-                    <button class="btn-plus" style="width:20px" onclick="plusProduct(${listProduct[index].id})">+</button>
+                    <input type="button" value="-" class="btn-sub" style="width:20px" onclick='handleAddSubCart(${JSON.stringify({ id: listProduct[index].id, type: 'sub' })})' />
+                    <input type="text" value="${listProduct[index].quantity}" style="width:30px; text-align:center"/>
+                    <input type="button" value="+" class="btn-plus" style="width:20px" onclick='handleAddSubCart(${JSON.stringify({ id: listProduct[index].id, type: 'plus' })})' />
+
 
                     <br/><br/><hr><br/>
                     <h3 class="price">Thành tiền:&ensp;${numberWithCommas(listProduct[index].totalPrice)}</h3>
@@ -33,33 +35,32 @@ function onLoadProducts() {
             </div>
         </div>
         `
-        renderCard.innerHTML += product
+        renderCard.innerHTML = product
     }
 }
 onLoadProducts();
 
+function handleAddSubCart(value) {
+    console.log(value);
 
-function subProduct(productID) {
-    // const listProducts = JSON.parse(localStorage.getItem("listProducts"));
     const listProductCart = JSON.parse(localStorage.getItem("listProductCart"));
     listProductCart.forEach((element, index) => {
-        if (element.quantity > 0) {
-            if (element.id == productID) {
-                listProductCart[index].quantity--;
+        if (value.type === 'sub') {
+            if (element.quantity > 0) {
+                if (element.id == value.id) {
+                    listProductCart[index].quantity--;
+                    listProductCart[index].totalPrice = listProductCart[index].quantity * element.price;
+                }
+            } else {
+                listProductCart[index].quantity = 0
             }
-        }
-    });
-    localStorage.setItem("listProductCart", JSON.stringify(listProductCart));
-    onLoadProducts();
-}
 
-function plusProduct(productID) {
-    // const listProducts = JSON.parse(localStorage.getItem("listProducts"));
-    const listProductCart = JSON.parse(localStorage.getItem("listProductCart"));
-    listProductCart.forEach((element, index) => {
-        if (element.quantity > 0) {
-            if (element.id == productID) {
-                listProductCart[index].quantity++;
+        } else if (value.type === 'plus') {
+            if (element.quantity >= 0) {
+                if (element.id == value.id) {
+                    listProductCart[index].quantity++;
+                    listProductCart[index].totalPrice = listProductCart[index].quantity * element.price;
+                }
             }
         }
     });
@@ -95,3 +96,35 @@ function buyNow() {
         window.location.href = "thanhToan.html";
     }
 }
+
+
+// function subProduct(productID) {
+//     const listProductCart = JSON.parse(localStorage.getItem("listProductCart"));
+//     listProductCart.forEach((element, index) => {
+//         if (element.quantity > 0) {
+//             if (element.id == productID) {
+//                 listProductCart[index].quantity--;
+//                 listProductCart[index].totalPrice = listProductCart[index].quantity * element.price;
+//             }
+//         } else {
+//             listProductCart[index].quantity = 0
+//         }
+//     });
+//     localStorage.setItem("listProductCart", JSON.stringify(listProductCart));
+//     onLoadProducts();
+// }
+
+// function plusProduct(productID) {
+//     // const listProducts = JSON.parse(localStorage.getItem("listProducts"));
+//     const listProductCart = JSON.parse(localStorage.getItem("listProductCart"));
+//     listProductCart.forEach((element, index) => {
+//         if (element.quantity >= 0) {
+//             if (element.id == productID) {
+//                 listProductCart[index].quantity++;
+//                 listProductCart[index].totalPrice = listProductCart[index].quantity * element.price;
+//             }
+//         }
+//     });
+//     localStorage.setItem("listProductCart", JSON.stringify(listProductCart));
+//     onLoadProducts();
+// }
