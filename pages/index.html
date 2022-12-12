@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <script src="https://kit.fontawesome.com/68734f4fab.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <link rel="stylesheet" href="../styles/header.css" type="text/css">
+    <link rel="stylesheet" href="../styles/slides.css" type="text/css">
+    <link rel="stylesheet" href="../styles/products.css" type="text/css">
+    <style>
+        .search {
+            position: relative;
+            text-align: right;
+            margin: 40px 80px 10px;
+        }
+
+        .search input {
+            width: 400px;
+            height: 40px;
+            font-size: 20px;
+            text-align: center;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .search i {
+            position: absolute;
+            top: 12px;
+            left: 0;
+            right: 12px;
+            color: #fff;
+        }
+
+        /* .img-test {
+            width: 100px;
+              filter: drop-shadow(10px 10px 5px rgba(255, 238, 1, 0.5));
+            box-shadow: 10px 10px 10px 10px rgba(255, 1, 81, 0.5);
+        } */
+    </style>
+</head>
+
+<body onscroll="myScroll()">
+
+    <div class="container">
+        <!-- ////////////     HEADER     //////////// -->
+        <header id="nav-head">
+        </header>
+
+        <!-- ////////////     CONTENT     //////////// -->
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="../images/slide_1.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="../images/slide_2.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="../images/slide_3.jpg" style="width:100%">
+            </div>
+
+            <div class="text">NỘI THẤT ĐẸP</div>
+
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+
+            <div class="dot-list" style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+
+        <div class="content-product">
+            <h2 style="text-align:center">Sản Phẩm</h2>
+            <div class="search">
+                <input type="text" id="inp-search" oninput="searchProduct()" placeholder="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <!-- <img class="img-test" src="../images/xe.png" alt=""> -->
+            <!-- Tạo id để render ra sản phẩm bằng JS -->
+            <div id="furniture"></div>
+        </div>
+
+        <div class="footer">
+            <div></div>
+        </div>
+    </div>
+</body>
+<script src="../javascript/header.js"></script>
+<script type="text/javascript" src="../javascript/slides.js"></script>
+<script type="text/javascript" src="../javascript/products.js"></script>
+
+</html>

@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("../images/slide_1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.content-card {
+    margin: 50px auto;
+    background-color: rgba(74, 72, 72, 0.836);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 60px
+}
+
+.content-card h2 {
+    text-align: center;
+    color: #fff
+}
+
+#renderCard {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 40%;
+    min-width: 500px;
+    display: flex;
+    justify-content: space-around;
+    transition: calc(0.6s);
+    position: relative;
+    padding: 26px 40px;
+    margin-top: 50px;
+    background-color: #fff
+}
+
+.card img {
+    width: 30%;
+    min-width: 100px;
+    height: 60%;
+}
+
+.card:hover {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
+}
+
+.card-body {
+    padding: 12px;
+    text-align: center;
+}
+
+.quantity {}
+
+.price {
+    color: red;
+    font-weight: bold;
+}
+
+.btn-buyNow {
+    background-color: rgb(22, 144, 28);
+    color: #fff;
+    border: 1px solid #ccc;
+    padding: 8px 20px;
+    transition: calc(0.5s);
+}
+
+.btn-delete {
+    background-color: rgb(146, 146, 146);
+    color: #fff;
+    border: 1px solid #ccc;
+    padding: 8px 20px;
+    transition: calc(0.5s);
+}
+
+.btn-buyNow:hover {
+    background-color: rgb(21, 190, 237);
+    padding: 10px 24px;
+    border: 3px solid rgb(152, 147, 147);
+}
+
+.btn-delete:hover {
+    background-color: red;
+    padding: 10px 24px;
+    border: 3px solid rgb(152, 147, 147);
+}
