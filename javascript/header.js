@@ -41,7 +41,7 @@ function onloadHeader() {
             </div>
 
             <div class="nav-head_right">
-                <a href="cartPage.html" class="card-link">Giỏ hàng
+                <a href="cartPage.html" class="card-link" style="margin:0 50px">Giỏ hàng
                     <i class="fa-solid fa-cart-shopping"></i>
                 </a>
                 <div class="login-link"></div>
@@ -63,8 +63,9 @@ function myScroll() {
 function renderLogin() {
     let change = document.querySelector('.login-link');
     let getUser = localStorage.getItem("user");
+    let renderUser = "";
     if (getUser == null) {
-        let renderUser = `
+        renderUser += `
         <a href="loginForm.html" style="color:blue"> Đăng Nhập </a>
             `
         change.innerHTML += renderUser;
@@ -78,9 +79,9 @@ function renderLogin() {
                     </ul>
                 </li>
             </ul>
-            <i class="fa-solid fa-right-from-bracket" onclick="logOut()" style="font-size:28px;"></i>
+            <i class="fa-solid fa-right-from-bracket" style="font-size:28px;"></i>
             `
-        change.innerHTML += renderUser;
+        change.innerHTML = renderUser;
     }
 }
 renderLogin();
@@ -90,7 +91,6 @@ function logOut() {
     let listUser = localStorage.getItem("user");
     if (listUser != null) {
         localStorage.removeItem(localStorage.key("user"));
-        window.location.reload();
     }
 }
 
