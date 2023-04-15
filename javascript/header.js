@@ -37,7 +37,7 @@ function onloadHeader() {
 
             <div class="nav-head_center">
                 <h4><a href="#">Yêu Thích </a></h4>
-                <h4><a href="#">Yêu Thích </a></h4>
+                <h4><a href="#">Nổi Bật </a></h4>
             </div>
 
             <div class="nav-head_right">
